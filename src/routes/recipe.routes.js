@@ -8,7 +8,7 @@ recipeRouter.get("/recipes", recipeController.getAllRecipes);
 // Task 2: Continues to src\controllers\recipe.controller.js
 
 // Task 3: Starts here: Implement get recipe by id route
-
+recipeRouter.get("/recipes/:id", recipeController.getRecipeById);
 // Task 3: Continues to src\controllers\recipe.controller.js
 
 // Task 7: Continues here: Add the middleware to authenticate the token

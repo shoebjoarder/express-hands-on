@@ -14,7 +14,15 @@ const getAllRecipes = async (req, res) => {
 // Task 2: Continues below to module.exports
 
 // Task 3: Continues here: Implement get recipe by id function
-
+const getRecipeById = async (req, res) => {
+  let recipe;
+  try {
+    recipe = await Recipe.findById(req.params.id);
+    return res.status(200).json(recipe);
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};
 // Task 3: Continues below to module.exports
 
 // Task 4: Continues here: Implement create a recipe function
@@ -34,7 +42,7 @@ module.exports = {
   getAllRecipes,
   // Task 2: Ends here
   // Task 3: Continues here: Add the get recipe by id function
-  //
+  getRecipeById,
   // Task 3: Ends here
   // Task 4: Continues here: Add the create a recipe function
   //

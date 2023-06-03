@@ -2,7 +2,15 @@ const db = require("../models");
 const Recipe = db.Recipe;
 
 // Task 2: Continues here: Implement get all recipes function
-
+const getAllRecipes = async (req, res) => {
+  let recipes;
+  try {
+    recipes = await Recipe.find({});
+    return res.status(200).json(recipes);
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};
 // Task 2: Continues below to module.exports
 
 // Task 3: Continues here: Implement get recipe by id function
@@ -23,7 +31,7 @@ const Recipe = db.Recipe;
 
 module.exports = {
   // Task 2: Continues here: Add the get all recipes function
-  //
+  getAllRecipes,
   // Task 2: Ends here
   // Task 3: Continues here: Add the get recipe by id function
   //

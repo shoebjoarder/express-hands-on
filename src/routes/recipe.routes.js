@@ -4,7 +4,7 @@ const recipeController = require("../controllers/recipe.controller");
 const verify = require("../middlewares/verify");
 
 // Task 2: Starts here: Implement get all recipes route
-
+recipeRouter.get("/recipes", recipeController.getAllRecipes);
 // Task 2: Continues to src\controllers\recipe.controller.js
 
 // Task 3: Starts here: Implement get recipe by id route

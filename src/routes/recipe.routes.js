@@ -23,7 +23,7 @@ recipeRouter.delete("/recipes/:id", recipeController.deleteRecipeById);
 
 // Task 7: Continues here: Add the middleware to authenticate the token
 // Task 6: Starts here: Implement update recipe by id route
-
+recipeRouter.put("/recipes/:id", recipeController.updateRecipeById);
 // Task 6: Continues to src\controllers\recipe.controller.js
 // Task 7: Ends here
 

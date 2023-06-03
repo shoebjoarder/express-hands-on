@@ -58,7 +58,14 @@ const deleteRecipeById = async (req, res) => {
 // Task 5: Continues below to module.exports
 
 // Task 6: Continues here: Implement update recipe by id function
-
+const updateRecipeById = async (req, res) => {
+  try {
+    await Recipe.findOneAndUpdate({ _id: req.params.id }, { $set: req.body });
+    return res.status(200).json({ message: `Recipe has been updated` });
+  } catch (err) {
+    return res.status(500).send({ error: "Error saving recipe" });
+  }
+};
 // Task 6: Continues below to module.exports
 
 module.exports = {
@@ -75,6 +82,6 @@ module.exports = {
   deleteRecipeById,
   // Task 5: Ends here
   // Task 6: Continues here: Add the update a recipe by id function
-  //
+  updateRecipeById,
   // Task 6: Ends here
 };

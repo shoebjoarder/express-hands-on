@@ -13,7 +13,7 @@ recipeRouter.get("/recipes/:id", recipeController.getRecipeById);
 
 // Task 7: Continues here: Add the middleware to authenticate the token
 // Task 4: Starts here: Implement create a recipe route
-
+recipeRouter.post("/recipes", recipeController.createRecipe);
 // Task 4: Continues to src\controllers\recipe.controller.js
 
 // Task 7: Continues here: Add the middleware to authenticate the token

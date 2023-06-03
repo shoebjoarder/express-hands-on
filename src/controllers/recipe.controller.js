@@ -26,7 +26,21 @@ const getRecipeById = async (req, res) => {
 // Task 3: Continues below to module.exports
 
 // Task 4: Continues here: Implement create a recipe function
-
+const createRecipe = async (req, res) => {
+  const recipe = new Recipe({
+    name: req.body.name,
+    description: req.body.description,
+    email: req.body.email,
+    ingredients: req.body.ingredients,
+    category: req.body.category,
+  });
+  try {
+    await recipe.save();
+    return res.status(201).json({ message: `Created a new recipe!` });
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};
 // Task 4: Continues below to module.exports
 
 // Task 5: Continues here: Implement delete recipe by id function

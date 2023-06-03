@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "8ce56eaa-7a57-4171-b622-851d3524c468",
+		"name": "Express Hands-on",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10089317"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Login User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"expressuser\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"expressuser\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recipe",
+			"item": [
+				{
+					"name": "Get All Recipes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/recipes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recipe By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/recipes/647b124d1bd3a96b460aa7ce",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipes",
+								"647b124d1bd3a96b460aa7ce"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Recipe",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Crab cakes\",\r\n    \"description\": \"\\n        Preheat the oven to 175ºC/gas 3. Lightly grease a 22cm metal or glass pie dish with a little of the butter.\\n        For the pie crust, blend the biscuits, sugar and remaining butter in a food processor until the mixture resembles breadcrumbs.\\n        Transfer to the pie dish and spread over the bottom and up the sides, firmly pressing down.\\n        Bake for 10 minutes, or until lightly browned. Remove from oven and place the dish on a wire rack to cool.\\n        For the filling, whisk the egg yolks in a bowl. Gradually whisk in the condensed milk until smooth.\\n        Mix in 6 tablespoons of lime juice, then pour the filling into the pie crust and level over with the back of a spoon.\\n        Return to the oven for 15 minutes, then place on a wire rack to cool.\\n        Once cooled, refrigerate for 6 hours or overnight.\\n        To serve, whip the cream until it just holds stiff peaks. Add dollops of cream to the top of the pie, and grate over some lime zest, for extra zing if you like.\\n    \\n        Source: https://www.jamieoliver.com/recipes/fruit-recipes/key-lime-pie/\",\r\n    \"email\": \"hello@email.com\",\r\n    \"ingredients\": [\r\n        \"4 large free-range egg yolks\",\r\n        \"400 ml condensed milk\",\r\n        \"5 limes\",\r\n        \"200 ml double cream\"\r\n    ],\r\n    \"category\": \"American\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/recipes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Recipe By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/recipes/647b124d1bd3a96b460aa7ce",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipes",
+								"647b124d1bd3a96b460aa7ce"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Recipe By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"name\": \"Crab cakes\",\r\n    \"description\": \"\\n        Preheat the oven to 175ºC/gas 3. Lightly grease a 22cm metal or glass pie dish with a little of the butter.\\n        For the pie crust, blend the biscuits, sugar and remaining butter in a food processor until the mixture resembles breadcrumbs.\\n        Transfer to the pie dish and spread over the bottom and up the sides, firmly pressing down.\\n        Bake for 10 minutes, or until lightly browned. Remove from oven and place the dish on a wire rack to cool.\\n        For the filling, whisk the egg yolks in a bowl. Gradually whisk in the condensed milk until smooth.\\n        Mix in 6 tablespoons of lime juice, then pour the filling into the pie crust and level over with the back of a spoon.\\n        Return to the oven for 15 minutes, then place on a wire rack to cool.\\n        Once cooled, refrigerate for 6 hours or overnight.\\n        To serve, whip the cream until it just holds stiff peaks. Add dollops of cream to the top of the pie, and grate over some lime zest, for extra zing if you like.\\n    \\n        Source: https://www.jamieoliver.com/recipes/fruit-recipes/key-lime-pie/\",\r\n    \"email\": \"hello@email.com\",\r\n    \"ingredients\": [\r\n      \"4 large free-range egg yolks\",\r\n      \"400 ml condensed milk\",\r\n      \"5 limes\",\r\n      \"200 ml double cream\"\r\n    ],\r\n    \"category\": \"American\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/recipes/647af729cf1e330dba4267cb",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipes",
+								"647af729cf1e330dba4267cb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

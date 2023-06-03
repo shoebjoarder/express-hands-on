@@ -12,7 +12,13 @@ const authenticateToken = (req, res, next) => {
   }
 
   // Task 7: Starts here: Implement the JWT verification
-
+  jwt.verify(token, JWT_TOKEN, (err, user) => {
+    if (err) {
+      return res.status(403).send({ error: "Invalid access token" });
+    }
+    req.userId = user.id;
+    next();
+  });
   // Task 7: Continues to src\controllers\recipe.controller.js
 };
 

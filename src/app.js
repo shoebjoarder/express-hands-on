@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 
+// Create connection to MongoDB
 const db = require("./models");
 MONGO_DB = process.env.MONGO_DB || "mongodb://localhost:27017/recipes";
 db.mongoose
@@ -25,7 +26,7 @@ db.mongoose
   .then(() => {
     console.log("Successfully connected to MongoDB.");
     // Task 1: Continues here: Initialize DB after the schema is defined
-
+    initializeDB();
     // Task 1: Ends here
   })
   .catch((err) => {

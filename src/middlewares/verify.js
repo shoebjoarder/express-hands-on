@@ -11,9 +11,14 @@ const authenticateToken = (req, res, next) => {
     return res.status(401).send({ error: "Access token not found" });
   }
 
-  // Task 7: Starts here: Implement the JWT verification
-
-  // Task 7: Continues to src\controllers\recipe.controller.js
+  // Task 7: Implement JWT verification
+  jwt.verify(token, JWT_TOKEN, (err, user) => {
+    if (err) {
+      return res.status(403).send({ error: "Invalid access token" });
+    }
+    req.userId = user.id;
+    next();
+  });
 };
 
 module.exports = { authenticateToken };

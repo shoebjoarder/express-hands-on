@@ -25,7 +25,7 @@ db.mongoose
   .then(() => {
     console.log("Successfully connected to MongoDB.");
     // Task 1: Continues here: Initialize DB after the schema is defined
-
+    initializeDB();
     // Task 1: Ends here
   })
   .catch((err) => {

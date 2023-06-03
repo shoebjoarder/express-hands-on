@@ -18,7 +18,7 @@ recipeRouter.post("/recipes", recipeController.createRecipe);
 
 // Task 7: Continues here: Add the middleware to authenticate the token
 // Task 5: Starts here: Implement delete recipe by id route
-
+recipeRouter.delete("/recipes/:id", recipeController.deleteRecipeById);
 // Task 5: Continues to src\controllers\recipe.controller.js
 
 // Task 7: Continues here: Add the middleware to authenticate the token

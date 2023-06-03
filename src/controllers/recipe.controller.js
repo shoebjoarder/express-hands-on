@@ -44,7 +44,17 @@ const createRecipe = async (req, res) => {
 // Task 4: Continues below to module.exports
 
 // Task 5: Continues here: Implement delete recipe by id function
-
+const deleteRecipeById = async (req, res) => {
+  let recipe;
+  try {
+    recipe = await Recipe.findByIdAndRemove(req.params.id);
+    return res
+      .status(200)
+      .json({ message: `'${recipe.name}' has been deleted` });
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};
 // Task 5: Continues below to module.exports
 
 // Task 6: Continues here: Implement update recipe by id function
@@ -62,7 +72,7 @@ module.exports = {
   createRecipe,
   // Task 4: Ends here
   // Task 5: Continues here: Add the delete a recipe by id function
-  //
+  deleteRecipeById,
   // Task 5: Ends here
   // Task 6: Continues here: Add the update a recipe by id function
   //

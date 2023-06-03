@@ -59,7 +59,7 @@ module.exports = {
   getRecipeById,
   // Task 3: Ends here
   // Task 4: Continues here: Add the create a recipe function
-  //
+  createRecipe,
   // Task 4: Ends here
   // Task 5: Continues here: Add the delete a recipe by id function
   //
